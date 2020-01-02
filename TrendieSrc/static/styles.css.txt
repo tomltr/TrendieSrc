@@ -1,0 +1,34 @@
+a, a:hover, a:visited, a:active
+{
+    text-decoration: none;
+    color:black;
+}
+
+.navbar
+{
+    margin-bottom: 50px;
+}
+
+.content-section
+{
+    margin-top: 20px;
+} 
+
+.news
+{
+    background-color: #FEFCFF;
+    margin-top: 50px;
+    padding: 30px ;
+}
+
+.card
+{
+    margin: 30px 30px;
+}
+
+.paginator
+{
+    margin: 30px 30px;
+}
+
+

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="content-section">
+    <div class="card">
+        <div class="card-header">
+            New Post
+        </div>
+
+        <div class="card-body">
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    {{ form.title.label(class="form-control-label") }}
+                    {% if form.title.errors %}
+                        {{ form.title(class="form-control form-control-ls is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.title.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.title(class="form-control form-control") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.category.label(class="form-control-label")}}
+                    {{ form.category(class="form-control")}}
+                </div>
+                <div class="form-group">
+                    {{ form.reference.label(class="form-control-label") }}
+                    {{ form.reference(class="form-control") }}
+                    <small id="referenceHelp" class="form-text text-muted">(Optional)</small>
+                </div>
+                <div class="form-group">
+                    {{ form.content.label(class="form-control-label") }}
+                    {{ form.content(class="form-control form-control-lg") }}
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm-1">
+                        {{ form.private.label(class="form-control-label") }}
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="form-check">
+                            {{ form.private(class="form-control-check") }}
+                        </div>
+                    </div>
+                </div>
+                {{ form.submit(class="btn btn-info") }}
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
